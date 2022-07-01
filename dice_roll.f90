@@ -128,34 +128,52 @@
             subroutine dice_face
             
                 if(int(a)==1) then
-                        print*,"   "
-                        print*," . "
-                        print*,"   "
+				
+			print*," ----- "
+			print*,"|     |"
+			print*,"|  .  |"
+			print*,"|     |"
+			print*," ----- "
             
                 else if(int(a)==2) then
-                        print*,".  "
-                        print*,"   "
-                        print*,"  ."
-            
+				
+			print*," ----- "
+			print*,"| .   |"
+			print*,"|     |"
+			print*,"|   . |"
+			print*," ----- "
+          
                 else if(int(a)==3) then
-                        print*,".  "
-                        print*," . "
-                        print*,"  ."
+				
+			print*," ----- "
+			print*,"| .   |"
+			print*,"|  .  |"
+			print*,"|   . |"
+			print*," ----- "
             
                 else if(int(a)==4) then
-                        print*,". ."
-                        print*,"   "
-                        print*,". ."
+				
+			print*," ----- "
+			print*,"| . . |"
+			print*,"|     |"
+			print*,"| . . |"
+			print*," ----- "
             
                 else if(int(a)==5) then
-                        print*,". ."
-                        print*," . "
-                        print*,". ."
+				
+			print*," ----- "
+			print*,"| . . |"
+			print*,"|  .  |"
+			print*,"| . . |"
+			print*," ----- "
             
                 else
-                        print*,"..."
-                        print*,"..."
-                        print*,"..."
+				
+			print*," ----- "
+			print*,"| . . |"
+			print*,"| . . |"
+			print*,"| . . |"
+			print*," ----- "
             
                 endif
             
