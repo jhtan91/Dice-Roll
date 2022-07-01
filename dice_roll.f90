@@ -1,4 +1,10 @@
-        !Module to change month from number to string
+        !This dice_roll program will randomly print a number from 1 to 6.
+        !The date_and_time function was used.
+        !Modules were implemented.
+        !Main program starts from line 173.
+        
+        !----------------Module 1-------------------------------
+        !Change month from number to string
         module mod_month2str
         
         implicit none
@@ -74,7 +80,8 @@
         
         end module mod_month2str
         
-        !Module to print the time
+        !----------------Module 2-------------------------------
+        !Change the format of the time
         module mod_time
         
         implicit none
@@ -93,11 +100,10 @@
                 hour=values(5)
                 
                 if(hour>12) then
-                
                     new_hour=hour-12
                     hour_format="PM"
-                else
                     
+                else
                     new_hour=hour
                     hour_format="AM"
                 
@@ -106,9 +112,11 @@
                 print*,"Current time is ",new_hour,":",values(6),hour_format
             
             end subroutine time_format
+            
         end module mod_time
         
-        !This module prints the dots on the dice
+        !----------------Module 3-------------------------------
+        !Prints the dots
         module mod_printdot
         
         implicit none
@@ -120,40 +128,34 @@
             subroutine dice_face
             
                 if(int(a)==1) then
-            
-                print*,"   "
-                print*," . "
-                print*,"   "
+                        print*,"   "
+                        print*," . "
+                        print*,"   "
             
                 else if(int(a)==2) then
-            
-                print*,".  "
-                print*,"   "
-                print*,"  ."
+                        print*,".  "
+                        print*,"   "
+                        print*,"  ."
             
                 else if(int(a)==3) then
-            
-                print*,".  "
-                print*," . "
-                print*,"  ."
+                        print*,".  "
+                        print*," . "
+                        print*,"  ."
             
                 else if(int(a)==4) then
-            
-                print*,". ."
-                print*,"   "
-                print*,". ."
+                        print*,". ."
+                        print*,"   "
+                        print*,". ."
             
                 else if(int(a)==5) then
-            
-                print*,". ."
-                print*," . "
-                print*,". ."
+                        print*,". ."
+                        print*," . "
+                        print*,". ."
             
                 else
-            
-                print*,"..."
-                print*,"..."
-                print*,"..."
+                        print*,"..."
+                        print*,"..."
+                        print*,"..."
             
                 endif
             
@@ -162,8 +164,7 @@
         end module mod_printdot
         
         
-        !.......This is the main program...............................!
-        
+        !--------------This is the main program----------------------
         
         program dice_roll
         
@@ -172,8 +173,6 @@
         use mod_printdot
         
         implicit none
-        
-        !This program will roll the dice with from 1 to 6
         
         real::r
         integer::month
@@ -195,7 +194,9 @@
             
             call random_seed()
             call random_number(r)
-        
+            
+            !random_number return real values between 0 to 1.
+            !To get 6 integers, multiply "r" with 6 and +1.
             a=r*6.0+1.0
         
             print*,"The dice rolled is: ",int(a)
@@ -206,6 +207,7 @@
             
                 if(cont=="y") then
                     go to 10
+                    
                 endif
                 
                 go to 20
